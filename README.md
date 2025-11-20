@@ -270,3 +270,40 @@ http://localhost:8080/curriculos/1
 - DELETE
 - DELETE http://localhost:8080/habilidades_emergentes/2
 
+### Progresso Trilha (/progresso_trilha)
+- GET all
+-  http://localhost:8080/progresso_trilha
+
+- GET id
+- http://localhost:8080/progresso_trilha/1
+
+- POST
+- http://localhost:8080/progresso_trilha
+
+  {
+	"usuario": {
+		"id": 1
+	},
+	"trilhas": {
+		"id": 1
+	},
+	"percentual": 75.00,
+	"ultima_atualizacao": "2025-11-09"
+
+}
+- PUT
+- http://localhost:8080/progresso_trilha/1
+  {
+	"usuario": {
+		"id": 1
+	},
+	"trilhas": {
+		"id": 1
+	},
+	"percentual": 75.00,
+	"ultima_atualizacao": "2025-11-09"
+
+}
+
+- DELETE
+- http://localhost:8080/progresso_trilha
