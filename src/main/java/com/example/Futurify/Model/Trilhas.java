@@ -1,5 +1,6 @@
 package com.example.Futurify.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
@@ -24,6 +25,10 @@ public class Trilhas {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
+
+    @OneToMany(mappedBy = "trilhas")
+    @JsonBackReference
+    private List<ProgressoTrilha> progressoTrilhas;
 
     @JsonProperty("nome")
     @NotBlank(message = "O nome da trilha é obrigatório.")

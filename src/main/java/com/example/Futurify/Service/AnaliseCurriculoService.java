@@ -1,6 +1,7 @@
 package com.example.Futurify.Service;
 
 
+import com.example.Futurify.Exceptions.AnaliseCurriculoNaoEncontradoException;
 import com.example.Futurify.Exceptions.UsuarioNaoEncontradoException;
 import com.example.Futurify.Model.AnaliseCurriculo;
 import com.example.Futurify.Model.Usuario;
@@ -30,6 +31,6 @@ public class AnaliseCurriculoService {
 
     public AnaliseCurriculo findById(Integer id){
         return analiseCurriculoRepository.findById(id).
-                orElseThrow(() -> new UsuarioNaoEncontradoException(id));
+                orElseThrow(() -> new AnaliseCurriculoNaoEncontradoException(id));
     }
 }

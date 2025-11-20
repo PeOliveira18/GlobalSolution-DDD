@@ -13,6 +13,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Getter
@@ -29,6 +30,11 @@ public class Usuario {
     @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
     @JsonBackReference
     private Curriculo curriculo;
+
+    @OneToMany(mappedBy = "usuario")
+    @JsonBackReference
+    private List<ProgressoTrilha> progressoTrilhas;
+
 
     @JsonProperty("nome")
     @NotBlank(message = "O nome é obrigatório.")
