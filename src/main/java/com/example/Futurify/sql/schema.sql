@@ -1,5 +1,7 @@
 CREATE SCHEMA futurify;
 
+
+
 CREATE TABLE usuarios ( id BIGINT PRIMARY KEY AUTO_INCREMENT, nome VARCHAR(100) NOT NULL, email VARCHAR(150) NOT NULL UNIQUE, area_atuacao VARCHAR(100), nivel_carreira VARCHAR(50), data_cadastro DATE NOT NULL );
 
 CREATE TABLE trilhas ( id BIGINT PRIMARY KEY AUTO_INCREMENT, nome VARCHAR(150) NOT NULL, descricao TEXT, nivel VARCHAR(50) NOT NULL, carga_horaria INT NOT NULL, foco_principal VARCHAR(100) );
@@ -55,4 +57,20 @@ CREATE TABLE HABILIDADES_EMERGENTES (
 importancia_futura             INT NOT NULL CHECK (importancia_futura BETWEEN 0 AND 10),
   descricao                    VARCHAR(250)
 );
+
+CREATE TABLE PROGRESSO_TRILHA (
+id_progress_trilha          BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+id_usuario					BIGINT NOT NULL,
+id_trilha					BIGINT NOT NULL,
+percentual					DECIMAL(5,2),
+ultima_atualizacao			DATE NOT NULL
+);
+
+ALTER TABLE PROGRESSO_TRILHA
+ADD CONSTRAINT FK_PROGRESSO_USUARIO
+FOREIGN KEY (id_usuario) REFERENCES usuarios(id);
+
+ALTER TABLE PROGRESSO_TRILHA
+ADD CONSTRAINT FK_PROGRESSO_TRILHA
+FOREIGN KEY (id_trilha) REFERENCES trilhas(id);
 
