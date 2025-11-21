@@ -1,3 +1,8 @@
+# Integrantes
+- Pedro Oliveira - 99943
+- Diego Cabral - 557817
+- Debora Ivanowski - 555694
+
 # 📘 MentorIA – Plataforma Inteligente de Evolução Profissional
 
 ## O MentorIA é uma plataforma desenvolvida para auxiliar usuários em sua evolução profissional por meio da análise inteligente de currículos, gerenciamento de competências e organização de trilhas de desenvolvimento personalizadas.
